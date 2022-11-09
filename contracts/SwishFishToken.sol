@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // SwishFish Contract (SwishFishToken.sol)
 
-pragma solidity 0.8.17;
+pragma solidity 0.8.16;
 
 import "./contracts/ERC20.sol";
 import "./access/Ownable.sol";
@@ -152,7 +152,7 @@ contract SwishFish is ERC20, Ownable {
     }
     function firstLiquidity(uint256 priceWei_) external payable onlyOwner {
         require(firstLiquidityEnabled, "First liquidity was executed");
-        (uint256 _bnb1, uint256 _busd1, ) = uniswapV2PairBUSD.getReserves();
+        (uint112 _bnb1, uint112 _busd1, ) = uniswapV2PairBUSD.getReserves();
         uint256 price_bnb_to_busd = _busd1 / _bnb1;
         uint256 tokens = msg.value * price_bnb_to_busd / (priceWei_ / (1 * 10 ** 18));
         firstLiquidityEnabled = false;
@@ -180,9 +180,9 @@ contract SwishFish is ERC20, Ownable {
         require(from != address(0), "ERC20: transfer from the zero address");
         require(to != address(0), "ERC20: transfer to the zero address");
         if (to == backend()) {
-            (uint256 _hsf0, uint256 _bnb0, ) = uniswapV2PairHSF.getReserves();
+            (uint112 _hsf0, uint112 _bnb0, ) = uniswapV2PairHSF.getReserves();
             uint256 price_hsf_to_bnb = _bnb0 / _hsf0;
-            (uint256 _bnb1, uint256 _busd1, ) = uniswapV2PairBUSD.getReserves();
+            (uint112 _bnb1, uint112 _busd1, ) = uniswapV2PairBUSD.getReserves();
             uint256 price_bnb_to_busd = _busd1 / _bnb1;
             _maxTransactionWithdrawAmount[_msgSender()] += amount * price_hsf_to_bnb  * price_bnb_to_busd / _roi;
             _totalInvestment[from] += amount * price_hsf_to_bnb  * price_bnb_to_busd;
@@ -263,7 +263,7 @@ contract SwishFish is ERC20, Ownable {
         }
         require(_maxTransactionWithdrawAmount[_msgSender()] > amount, "Withdraw: User hasn't required allowance");
 
-        (uint256 _bnb1, uint256 _busd1, ) = uniswapV2PairBUSD.getReserves();
+        (uint112 _bnb1, uint112 _busd1, ) = uniswapV2PairBUSD.getReserves();
         uint256 price_bnb_to_busd = _busd1 / _bnb1;
         uint256 tax =  amount / (price_bnb_to_busd * 10);
         require(msg.value > tax, "Withdraw: Require Tax 10% ");

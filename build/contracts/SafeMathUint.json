@@ -1,33 +1,33 @@
 {
   "contractName": "SafeMathUint",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Math operations with safety checks that revert on error\",\"kind\":\"dev\",\"methods\":{},\"title\":\"SafeMathUint\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/libraries/SafeMathUint.sol\":\"SafeMathUint\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/libraries/SafeMathUint.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (utils/math/SafeMath.sol)\\n\\npragma solidity 0.8.17;\\n\\n/**\\n * @title SafeMathUint\\n * @dev Math operations with safety checks that revert on error\\n */\\nlibrary SafeMathUint {\\n    function toInt256Safe(uint256 a) internal pure returns (int256) {\\n        int256 b = int256(a);\\n        require(b >= 0);\\n        return b;\\n    }\\n}\\n\",\"keccak256\":\"0x75170a91197409acb34c920892b92c8ac57d8262df237e79661c61730f2de925\",\"license\":\"MIT\"}},\"version\":1}",
-  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212205c3a0d961f0721c80ac786afd77c25e5decbcb64f7b33ae2c19e8f8e95bb6b1064736f6c63430008110033",
-  "deployedBytecode": "0x600080fdfea26469706673582212205c3a0d961f0721c80ac786afd77c25e5decbcb64f7b33ae2c19e8f8e95bb6b1064736f6c63430008110033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Math operations with safety checks that revert on error\",\"kind\":\"dev\",\"methods\":{},\"title\":\"SafeMathUint\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/libraries/SafeMathUint.sol\":\"SafeMathUint\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/libraries/SafeMathUint.sol\":{\"keccak256\":\"0xd66d4085388e67010400cf0a62e0c7aec1792342d3655417fbb156cd0b718f73\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://540451ed558c8e8ab21d223db9f5cec01d1e1c36c540b0991928f3a6bf0ad146\",\"dweb:/ipfs/QmR93tABrAexWxJWEcp4KbtbvziJi8AANLFfUr85bQKZd1\"]}},\"version\":1}",
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea264697066735822122046e05cf720dae678bdab4084f9dad5087d34bede4cddb4aef26498a694642b8a64736f6c63430008100033",
+  "deployedBytecode": "0x600080fdfea264697066735822122046e05cf720dae678bdab4084f9dad5087d34bede4cddb4aef26498a694642b8a64736f6c63430008100033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
   "sourceMap": "227:173:11:-:0;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "227:173:11:-:0;;",
-  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (utils/math/SafeMath.sol)\n\npragma solidity 0.8.17;\n\n/**\n * @title SafeMathUint\n * @dev Math operations with safety checks that revert on error\n */\nlibrary SafeMathUint {\n    function toInt256Safe(uint256 a) internal pure returns (int256) {\n        int256 b = int256(a);\n        require(b >= 0);\n        return b;\n    }\n}\n",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (utils/math/SafeMath.sol)\n\npragma solidity 0.8.16;\n\n/**\n * @title SafeMathUint\n * @dev Math operations with safety checks that revert on error\n */\nlibrary SafeMathUint {\n    function toInt256Safe(uint256 a) internal pure returns (int256) {\n        int256 b = int256(a);\n        require(b >= 0);\n        return b;\n    }\n}\n",
   "sourcePath": "/Users/ivanvalenzuela/WebstormProjects/swishfish-contract/contracts/libraries/SafeMathUint.sol",
   "ast": {
     "absolutePath": "project:/contracts/libraries/SafeMathUint.sol",
     "exportedSymbols": {
       "SafeMathUint": [
-        3412
+        3420
       ]
     },
-    "id": 3413,
+    "id": 3421,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3387,
+        "id": 3395,
         "literals": [
           "solidity",
           "0.8",
-          ".17"
+          ".16"
         ],
         "nodeType": "PragmaDirective",
         "src": "107:23:11"
@@ -39,15 +39,15 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 3388,
+          "id": 3396,
           "nodeType": "StructuredDocumentation",
           "src": "132:94:11",
           "text": " @title SafeMathUint\n @dev Math operations with safety checks that revert on error"
         },
         "fullyImplemented": true,
-        "id": 3412,
+        "id": 3420,
         "linearizedBaseContracts": [
-          3412
+          3420
         ],
         "name": "SafeMathUint",
         "nameLocation": "235:12:11",
@@ -55,23 +55,23 @@
         "nodes": [
           {
             "body": {
-              "id": 3410,
+              "id": 3418,
               "nodeType": "Block",
               "src": "318:80:11",
               "statements": [
                 {
                   "assignments": [
-                    3396
+                    3404
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3396,
+                      "id": 3404,
                       "mutability": "mutable",
                       "name": "b",
                       "nameLocation": "335:1:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 3410,
+                      "scope": 3418,
                       "src": "328:8:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -80,7 +80,7 @@
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 3395,
+                        "id": 3403,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
                         "src": "328:6:11",
@@ -92,15 +92,15 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3401,
+                  "id": 3409,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 3399,
+                        "id": 3407,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3390,
+                        "referencedDeclaration": 3398,
                         "src": "346:1:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -115,7 +115,7 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3398,
+                      "id": 3406,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -127,14 +127,14 @@
                         "typeString": "type(int256)"
                       },
                       "typeName": {
-                        "id": 3397,
+                        "id": 3405,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
                         "src": "339:6:11",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 3400,
+                    "id": 3408,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -161,17 +161,17 @@
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 3405,
+                        "id": 3413,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 3403,
+                          "id": 3411,
                           "name": "b",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3396,
+                          "referencedDeclaration": 3404,
                           "src": "366:1:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
@@ -182,7 +182,7 @@
                         "operator": ">=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 3404,
+                          "id": 3412,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -210,7 +210,7 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 3402,
+                      "id": 3410,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -224,7 +224,7 @@
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 3406,
+                    "id": 3414,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -240,31 +240,31 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3407,
+                  "id": 3415,
                   "nodeType": "ExpressionStatement",
                   "src": "358:15:11"
                 },
                 {
                   "expression": {
-                    "id": 3408,
+                    "id": 3416,
                     "name": "b",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3396,
+                    "referencedDeclaration": 3404,
                     "src": "390:1:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 3394,
-                  "id": 3409,
+                  "functionReturnParameters": 3402,
+                  "id": 3417,
                   "nodeType": "Return",
                   "src": "383:8:11"
                 }
               ]
             },
-            "id": 3411,
+            "id": 3419,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -272,17 +272,17 @@
             "nameLocation": "263:12:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3391,
+              "id": 3399,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3390,
+                  "id": 3398,
                   "mutability": "mutable",
                   "name": "a",
                   "nameLocation": "284:1:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3411,
+                  "scope": 3419,
                   "src": "276:9:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -291,7 +291,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3389,
+                    "id": 3397,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "276:7:11",
@@ -306,17 +306,17 @@
               "src": "275:11:11"
             },
             "returnParameters": {
-              "id": 3394,
+              "id": 3402,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3393,
+                  "id": 3401,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3411,
+                  "scope": 3419,
                   "src": "310:6:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -325,7 +325,7 @@
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 3392,
+                    "id": 3400,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
                     "src": "310:6:11",
@@ -339,14 +339,14 @@
               ],
               "src": "309:8:11"
             },
-            "scope": 3412,
+            "scope": 3420,
             "src": "254:144:11",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3413,
+        "scope": 3421,
         "src": "227:173:11",
         "usedErrors": []
       }
@@ -355,11 +355,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+    "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-09T19:57:12.740Z",
+  "updatedAt": "2022-11-09T21:53:08.568Z",
   "devdoc": {
     "details": "Math operations with safety checks that revert on error",
     "kind": "dev",

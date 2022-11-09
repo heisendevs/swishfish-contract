@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Coin2Fish Contract (access/Ownable.sol)
 
-pragma solidity 0.8.17;
+pragma solidity 0.8.16;
 
 import "../utils/Context.sol";
 import "../utils/MultiSignature.sol";

@@ -39,27 +39,16 @@
         }
     },
     "settings": {
+        "viaIR": true,
         "metadata": {
-            "useLiteralContent": true
+            "useLiteralContent": true,
+            "bytecodeHash": "ipfs"
         },
         "optimizer": {
             "enabled": true,
             "runs": 200
         },
-        "outputSelection": {
-            "*": {
-                "*": [
-                    "abi",
-                    "evm.bytecode",
-                    "evm.deployedBytecode",
-                    "evm.methodIdentifiers"
-                ],
-                "": [
-                    "id",
-                    "ast"
-                ]
-            }
-        },
         "evmVersion": "constantinople"
     }
 }
+

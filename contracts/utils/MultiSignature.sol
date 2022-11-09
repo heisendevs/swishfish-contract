@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Coin2Fish Contract (utils/MultiSigWallet.sol)
 
-pragma solidity 0.8.17;
+pragma solidity 0.8.16;
 
 contract MultiSignature {
     event DepositProposal(address indexed sender, uint amount);

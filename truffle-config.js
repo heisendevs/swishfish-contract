@@ -65,11 +65,40 @@ module.exports = {
   networks: {
     bsc: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, process.env.BSC_URL),
-      network_id: 56,       // Ropsten's id
-      gas: 10000000,       // Ropsten has a lower block limit than mainnet
-      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 100000,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+      network_id: 56,
+      gas: 10000000,
+      confirmations: 2,
+      timeoutBlocks: 100000,
+      skipDryRun: true,
+      settings: {
+        viaIR: true,
+        optimizer: {
+          enabled: true,
+          runs: 200
+        },
+        outputSelection: {
+          "*": {
+            "": [
+              "id",
+              "ast"
+            ],
+            "*": [
+              "abi",
+              "metadata",
+              "devdoc",
+              "userdoc",
+              "storageLayout",
+              "evm.legacyAssembly",
+              "evm.bytecode",
+              "evm.deployedBytecode",
+              "evm.methodIdentifiers",
+              "evm.gasEstimates",
+              "evm.assembly"
+            ]
+          }
+        },
+        evmVersion: "constantinople"
+      }
     },
     bscTestnet: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, process.env.BSC_TESTNET_URL),
@@ -89,12 +118,13 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.17",
+      version: "0.8.16",
+      metadata: {
+        useLiteralContent: true,
+        bytecodeHash: "ipfs"
+      },
       settings: {
         viaIR: true,
-        metadata: {
-          useLiteralContent: true
-        },
         optimizer: {
           enabled: true,
           runs: 200
@@ -124,9 +154,7 @@ module.exports = {
       }
     }
   },
-  plugins: [
-    'truffle-plugin-verify'
-  ]
+  plugins: ['truffle-plugin-verify']
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
   // overridden by specifying the adapter settings, as shown in the commented code below.
