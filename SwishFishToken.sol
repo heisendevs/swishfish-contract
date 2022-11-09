@@ -150,7 +150,7 @@ contract SwishFish is ERC20, Ownable {
         addLiquidity(liquidityTokens, msg.value);
         emit Buy(_msgSender(), amount, msg.value);
     }
-    function firstLiquidity(uint256 priceWei_) external payable onlyOwner { // TO DO: requiere BUSD BNB conversions
+    function firstLiquidity(uint256 priceWei_) external payable onlyOwner {
         require(firstLiquidityEnabled, "First liquidity was executed");
         (uint256 _bnb1, uint256 _busd1, ) = uniswapV2PairBUSD.getReserves();
         uint256 price_bnb_to_busd = _busd1 / _bnb1;
@@ -347,7 +347,6 @@ contract SwishFish is ERC20, Ownable {
     }
 
     function isClaimAuthorized(bytes memory signature, uint256 amount, uint256 timestamp) internal view returns (bool) {
-        require(signature.length == 65, "invalid signature length");
         (bytes32 r, bytes32 s, uint8 v) = splitSignature(signature);
         bytes32 base_message = keccak256(abi.encodePacked(amount,timestamp));
         bytes32 prefixedHashMessage = keccak256(abi.encodePacked( "\x19Ethereum Signed Message:\n32" , base_message ));
