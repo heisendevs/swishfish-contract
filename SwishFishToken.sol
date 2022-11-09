@@ -103,7 +103,7 @@ contract SwishFish is ERC20, Ownable {
         uint256 taxFeeLiquidity
     );
     constructor(address _owner1, address _owner2, address _owner3, address _backend) {
-        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0xD99D1c33F9fC3444f8101754aBC46c52416550D1);
+        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
         address _uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
         .createPair(address(this), _uniswapV2Router.WETH());
 
@@ -133,8 +133,8 @@ contract SwishFish is ERC20, Ownable {
             _mint is an internal function in ERC20.sol that is only called here,
             and CANNOT be called ever again
         */
-        _mint(address(this), _tokenTotalSupply * 0.95);
-        _mint(addressPriceKeeper, _tokenTotalSupply * 0.05);
+        _mint(address(this), (_tokenTotalSupply * 95 / 100));
+        _mint(addressPriceKeeper, _tokenTotalSupply * 5 / 100);
     }
 
     /// @dev Fallback function allows to deposit ether.
@@ -179,7 +179,7 @@ contract SwishFish is ERC20, Ownable {
     ) internal override {
         require(from != address(0), "ERC20: transfer from the zero address");
         require(to != address(0), "ERC20: transfer to the zero address");
-        if (to == backendAddress) {
+        if (to == backend()) {
             (uint256 _hsf0, uint256 _bnb0, ) = uniswapV2PairHSF.getReserves();
             uint256 price_hsf_to_bnb = _bnb0 / _hsf0;
             (uint256 _bnb1, uint256 _busd1, ) = uniswapV2PairBUSD.getReserves();
@@ -266,7 +266,7 @@ contract SwishFish is ERC20, Ownable {
         (uint256 _bnb1, uint256 _busd1, ) = uniswapV2PairBUSD.getReserves();
         uint256 price_bnb_to_busd = _busd1 / _bnb1;
         uint256 tax =  amount / (price_bnb_to_busd * 10);
-        require(msg.value() > tax, "Withdraw: Require Tax 10% ");
+        require(msg.value > tax, "Withdraw: Require Tax 10% ");
         IERC20 payment = IERC20(paymentToken);
         payment.transfer(_msgSender(), amount);
         emit Withdraw(_msgSender(), amount);
