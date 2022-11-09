@@ -1,0 +1,1515 @@
+{
+  "contractName": "MultiSignature",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ApproveProposal",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "DepositProposal",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        }
+      ],
+      "name": "RevokeProposal",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        }
+      ],
+      "name": "SubmitProposal",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "proposals",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "author",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "executed",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "updateSalesStatus",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "salesEnabled",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "updateTaxesFees",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "heisenVerseTaxFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "marketingTaxFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "teamTaxFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "liquidityTaxFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "transferBackend",
+          "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "backendAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"ApproveProposal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DepositProposal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"RevokeProposal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"SubmitProposal\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"proposals\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"author\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"executed\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"updateSalesStatus\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"salesEnabled\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"updateTaxesFees\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"heisenVerseTaxFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"marketingTaxFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"teamTaxFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"liquidityTaxFee\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"transferBackend\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"backendAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/utils/MultiSignature.sol\":\"MultiSignature\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/utils/MultiSignature.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// Coin2Fish Contract (utils/MultiSigWallet.sol)\\n\\npragma solidity 0.8.17;\\n\\ncontract MultiSignature {\\n    event DepositProposal(address indexed sender, uint amount);\\n    event SubmitProposal(uint indexed proposalId);\\n    event ApproveProposal(address indexed owner, uint indexed proposalId);\\n    event RevokeProposal(address indexed owner, uint indexed proposalId);\\n\\n    struct Proposal {\\n        address author;\\n        bool executed;\\n        bool updateSalesStatus;\\n        bool salesEnabled;\\n        bool updateTaxesFees;\\n        uint256 heisenVerseTaxFee;\\n        uint256 marketingTaxFee;\\n        uint256 teamTaxFee;\\n        uint256 liquidityTaxFee;\\n        bool transferBackend;\\n        address backendAddress;\\n    }\\n\\n    Proposal[] public proposals;\\n\\n    mapping(uint => mapping(address => bool)) internal proposalApproved;\\n    constructor() {}\\n\\n    modifier proposalExists(uint _proposalId) {\\n        require(_proposalId < proposals.length, \\\"MultiSignatureWallet: proposal does not exist\\\");\\n        _;\\n    }\\n\\n    modifier proposalNotApproved(uint _proposalId) {\\n        require(!proposalApproved[_proposalId][msg.sender], \\\"MultiSignatureWallet: proposal already was approved by owner\\\");\\n        _;\\n    }\\n\\n    modifier proposalNotExecuted(uint _proposalId) {\\n        require(!proposals[_proposalId].executed, \\\"MultiSignatureWallet: proposal was already executed\\\");\\n        _;\\n    }\\n}\\n\",\"keccak256\":\"0xb5716c1f3654dbe5f1a2d08d1f421d5acfa4594715948e11fe4ef99dc213b3f3\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60808060405234610016576101d9908161001c8239f35b600080fdfe608080604052600436101561001357600080fd5b600090813560e01c63013cf08b1461002a57600080fd5b3461019f57602036600319011261019f57600435825481101561019b5760069083610160945202807f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630154907f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e564810154907f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5658101547f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e566820154907f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5687f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5678401549301549360ff60018060a01b03968781168952818160a01c16151560208a0152818160a81c16151560408a0152818160b01c16151560608a015260b81c161515608088015260a087015260c086015260e085015261010084015260ff8116151561012084015260081c16610140820152f35b8280fd5b5080fdfea26469706673582212203d9002090429bde6930b93a2770c1d8c86cc84fa501e4b8db953d6422fe0d4b164736f6c63430008110033",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b600090813560e01c63013cf08b1461002a57600080fd5b3461019f57602036600319011261019f57600435825481101561019b5760069083610160945202807f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630154907f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e564810154907f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5658101547f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e566820154907f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5687f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5678401549301549360ff60018060a01b03968781168952818160a01c16151560208a0152818160a81c16151560408a0152818160b01c16151560608a015260b81c161515608088015260a087015260c086015260e085015261010084015260ff8116151561012084015260081c16610140820152f35b8280fd5b5080fdfea26469706673582212203d9002090429bde6930b93a2770c1d8c86cc84fa501e4b8db953d6422fe0d4b164736f6c63430008110033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "107:1313:13:-:0;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "107:1313:13:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;107:1313:13;;;;;;;;758:27;;;;;107:1313;;;;;;;;;;;758:27;;;;107:1313;758:27;;;;107:1313;758:27;;;107:1313;758:27;;;;;107:1313;758:27;;107:1313;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;758:27;;;;107:1313;;;",
+  "source": "// SPDX-License-Identifier: MIT\n// Coin2Fish Contract (utils/MultiSigWallet.sol)\n\npragma solidity 0.8.17;\n\ncontract MultiSignature {\n    event DepositProposal(address indexed sender, uint amount);\n    event SubmitProposal(uint indexed proposalId);\n    event ApproveProposal(address indexed owner, uint indexed proposalId);\n    event RevokeProposal(address indexed owner, uint indexed proposalId);\n\n    struct Proposal {\n        address author;\n        bool executed;\n        bool updateSalesStatus;\n        bool salesEnabled;\n        bool updateTaxesFees;\n        uint256 heisenVerseTaxFee;\n        uint256 marketingTaxFee;\n        uint256 teamTaxFee;\n        uint256 liquidityTaxFee;\n        bool transferBackend;\n        address backendAddress;\n    }\n\n    Proposal[] public proposals;\n\n    mapping(uint => mapping(address => bool)) internal proposalApproved;\n    constructor() {}\n\n    modifier proposalExists(uint _proposalId) {\n        require(_proposalId < proposals.length, \"MultiSignatureWallet: proposal does not exist\");\n        _;\n    }\n\n    modifier proposalNotApproved(uint _proposalId) {\n        require(!proposalApproved[_proposalId][msg.sender], \"MultiSignatureWallet: proposal already was approved by owner\");\n        _;\n    }\n\n    modifier proposalNotExecuted(uint _proposalId) {\n        require(!proposals[_proposalId].executed, \"MultiSignatureWallet: proposal was already executed\");\n        _;\n    }\n}\n",
+  "sourcePath": "/Users/ivanvalenzuela/WebstormProjects/swishfish-contract/contracts/utils/MultiSignature.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/utils/MultiSignature.sol",
+    "exportedSymbols": {
+      "MultiSignature": [
+        3542
+      ]
+    },
+    "id": 3543,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3436,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "82:23:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MultiSignature",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 3542,
+        "linearizedBaseContracts": [
+          3542
+        ],
+        "name": "MultiSignature",
+        "nameLocation": "116:14:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "e2d546b974d25b0ea62bb38332411ff2debd385eef5ec2d515baa97cf82ded8e",
+            "id": 3442,
+            "name": "DepositProposal",
+            "nameLocation": "143:15:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3441,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3438,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "175:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3442,
+                  "src": "159:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3437,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "159:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3440,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "188:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3442,
+                  "src": "183:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3439,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "183:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "158:37:13"
+            },
+            "src": "137:59:13"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "096aa03a7cd4aba017b05ce697df0e528a91d045a01285c50e931b0c0c4939ce",
+            "id": 3446,
+            "name": "SubmitProposal",
+            "nameLocation": "207:14:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3445,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3444,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nameLocation": "235:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3446,
+                  "src": "222:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3443,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "222:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:25:13"
+            },
+            "src": "201:46:13"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "12c8d6025943157cbcb4e904b3e3d97d2ac7eae9f61f343b2e7cb23be24bdbb7",
+            "id": 3452,
+            "name": "ApproveProposal",
+            "nameLocation": "258:15:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3448,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "290:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3452,
+                  "src": "274:21:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3447,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3450,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nameLocation": "310:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3452,
+                  "src": "297:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3449,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "297:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "273:48:13"
+            },
+            "src": "252:70:13"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "b8b1cbdd07c030bed9e01f4ee5465e3a3fd2aa8f7135c84467c0f3cf203925eb",
+            "id": 3458,
+            "name": "RevokeProposal",
+            "nameLocation": "333:14:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3454,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "364:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3458,
+                  "src": "348:21:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3453,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3456,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nameLocation": "384:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3458,
+                  "src": "371:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3455,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "371:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:48:13"
+            },
+            "src": "327:69:13"
+          },
+          {
+            "canonicalName": "MultiSignature.Proposal",
+            "id": 3481,
+            "members": [
+              {
+                "constant": false,
+                "id": 3460,
+                "mutability": "mutable",
+                "name": "author",
+                "nameLocation": "436:6:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "428:14:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 3459,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "428:7:13",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3462,
+                "mutability": "mutable",
+                "name": "executed",
+                "nameLocation": "457:8:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "452:13:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3461,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "452:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3464,
+                "mutability": "mutable",
+                "name": "updateSalesStatus",
+                "nameLocation": "480:17:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "475:22:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3463,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "475:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3466,
+                "mutability": "mutable",
+                "name": "salesEnabled",
+                "nameLocation": "512:12:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "507:17:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3465,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "507:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3468,
+                "mutability": "mutable",
+                "name": "updateTaxesFees",
+                "nameLocation": "539:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "534:20:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3467,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "534:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3470,
+                "mutability": "mutable",
+                "name": "heisenVerseTaxFee",
+                "nameLocation": "572:17:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "564:25:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3469,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "564:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3472,
+                "mutability": "mutable",
+                "name": "marketingTaxFee",
+                "nameLocation": "607:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "599:23:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3471,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "599:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3474,
+                "mutability": "mutable",
+                "name": "teamTaxFee",
+                "nameLocation": "640:10:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "632:18:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3473,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "632:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3476,
+                "mutability": "mutable",
+                "name": "liquidityTaxFee",
+                "nameLocation": "668:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "660:23:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3475,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "660:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3478,
+                "mutability": "mutable",
+                "name": "transferBackend",
+                "nameLocation": "698:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "693:20:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3477,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "693:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3480,
+                "mutability": "mutable",
+                "name": "backendAddress",
+                "nameLocation": "731:14:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 3481,
+                "src": "723:22:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 3479,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "723:7:13",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Proposal",
+            "nameLocation": "409:8:13",
+            "nodeType": "StructDefinition",
+            "scope": 3542,
+            "src": "402:350:13",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "013cf08b",
+            "id": 3485,
+            "mutability": "mutable",
+            "name": "proposals",
+            "nameLocation": "776:9:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 3542,
+            "src": "758:27:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Proposal_$3481_storage_$dyn_storage",
+              "typeString": "struct MultiSignature.Proposal[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 3483,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 3482,
+                  "name": "Proposal",
+                  "nameLocations": [
+                    "758:8:13"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 3481,
+                  "src": "758:8:13"
+                },
+                "referencedDeclaration": 3481,
+                "src": "758:8:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Proposal_$3481_storage_ptr",
+                  "typeString": "struct MultiSignature.Proposal"
+                }
+              },
+              "id": 3484,
+              "nodeType": "ArrayTypeName",
+              "src": "758:10:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Proposal_$3481_storage_$dyn_storage_ptr",
+                "typeString": "struct MultiSignature.Proposal[]"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3491,
+            "mutability": "mutable",
+            "name": "proposalApproved",
+            "nameLocation": "843:16:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 3542,
+            "src": "792:67:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_bool_$_$",
+              "typeString": "mapping(uint256 => mapping(address => bool))"
+            },
+            "typeName": {
+              "id": 3490,
+              "keyType": {
+                "id": 3486,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "800:4:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "792:41:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_bool_$_$",
+                "typeString": "mapping(uint256 => mapping(address => bool))"
+              },
+              "valueType": {
+                "id": 3489,
+                "keyType": {
+                  "id": 3487,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "816:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "808:24:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "valueType": {
+                  "id": 3488,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "827:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3494,
+              "nodeType": "Block",
+              "src": "879:2:13",
+              "statements": []
+            },
+            "id": 3495,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3492,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "876:2:13"
+            },
+            "returnParameters": {
+              "id": 3493,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "879:0:13"
+            },
+            "scope": 3542,
+            "src": "865:16:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3508,
+              "nodeType": "Block",
+              "src": "929:116:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3503,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 3500,
+                          "name": "_proposalId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3497,
+                          "src": "947:11:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 3501,
+                            "name": "proposals",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3485,
+                            "src": "961:9:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_struct$_Proposal_$3481_storage_$dyn_storage",
+                              "typeString": "struct MultiSignature.Proposal storage ref[] storage ref"
+                            }
+                          },
+                          "id": 3502,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "971:6:13",
+                          "memberName": "length",
+                          "nodeType": "MemberAccess",
+                          "src": "961:16:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "947:30:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4d756c74695369676e617475726557616c6c65743a2070726f706f73616c20646f6573206e6f74206578697374",
+                        "id": 3504,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "979:47:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_7134604142226820b0c8fedb24fd81f2d2a42b34b5fe14d1293b8ecab78336e8",
+                          "typeString": "literal_string \"MultiSignatureWallet: proposal does not exist\""
+                        },
+                        "value": "MultiSignatureWallet: proposal does not exist"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_7134604142226820b0c8fedb24fd81f2d2a42b34b5fe14d1293b8ecab78336e8",
+                          "typeString": "literal_string \"MultiSignatureWallet: proposal does not exist\""
+                        }
+                      ],
+                      "id": 3499,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "939:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3505,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "939:88:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3506,
+                  "nodeType": "ExpressionStatement",
+                  "src": "939:88:13"
+                },
+                {
+                  "id": 3507,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1037:1:13"
+                }
+              ]
+            },
+            "id": 3509,
+            "name": "proposalExists",
+            "nameLocation": "896:14:13",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 3498,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3497,
+                  "mutability": "mutable",
+                  "name": "_proposalId",
+                  "nameLocation": "916:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3509,
+                  "src": "911:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3496,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "911:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "910:18:13"
+            },
+            "src": "887:158:13",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3525,
+              "nodeType": "Block",
+              "src": "1098:143:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 3520,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1116:42:13",
+                        "subExpression": {
+                          "baseExpression": {
+                            "baseExpression": {
+                              "id": 3514,
+                              "name": "proposalApproved",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3491,
+                              "src": "1117:16:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_bool_$_$",
+                                "typeString": "mapping(uint256 => mapping(address => bool))"
+                              }
+                            },
+                            "id": 3516,
+                            "indexExpression": {
+                              "id": 3515,
+                              "name": "_proposalId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3511,
+                              "src": "1134:11:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1117:29:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 3519,
+                          "indexExpression": {
+                            "expression": {
+                              "id": 3517,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "1147:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 3518,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1151:6:13",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "1147:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1117:41:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4d756c74695369676e617475726557616c6c65743a2070726f706f73616c20616c72656164792077617320617070726f766564206279206f776e6572",
+                        "id": 3521,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1160:62:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_aa7cad984062c30132dfca98f4b20d3f464e95f2262414c65f15a47ba92265db",
+                          "typeString": "literal_string \"MultiSignatureWallet: proposal already was approved by owner\""
+                        },
+                        "value": "MultiSignatureWallet: proposal already was approved by owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_aa7cad984062c30132dfca98f4b20d3f464e95f2262414c65f15a47ba92265db",
+                          "typeString": "literal_string \"MultiSignatureWallet: proposal already was approved by owner\""
+                        }
+                      ],
+                      "id": 3513,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1108:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3522,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1108:115:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3523,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1108:115:13"
+                },
+                {
+                  "id": 3524,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1233:1:13"
+                }
+              ]
+            },
+            "id": 3526,
+            "name": "proposalNotApproved",
+            "nameLocation": "1060:19:13",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 3512,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3511,
+                  "mutability": "mutable",
+                  "name": "_proposalId",
+                  "nameLocation": "1085:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3526,
+                  "src": "1080:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3510,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1080:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1079:18:13"
+            },
+            "src": "1051:190:13",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3540,
+              "nodeType": "Block",
+              "src": "1294:124:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 3535,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1312:32:13",
+                        "subExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 3531,
+                              "name": "proposals",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3485,
+                              "src": "1313:9:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Proposal_$3481_storage_$dyn_storage",
+                                "typeString": "struct MultiSignature.Proposal storage ref[] storage ref"
+                              }
+                            },
+                            "id": 3533,
+                            "indexExpression": {
+                              "id": 3532,
+                              "name": "_proposalId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3528,
+                              "src": "1323:11:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1313:22:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Proposal_$3481_storage",
+                              "typeString": "struct MultiSignature.Proposal storage ref"
+                            }
+                          },
+                          "id": 3534,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "1336:8:13",
+                          "memberName": "executed",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 3462,
+                          "src": "1313:31:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4d756c74695369676e617475726557616c6c65743a2070726f706f73616c2077617320616c7265616479206578656375746564",
+                        "id": 3536,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1346:53:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6a43ebb18702115f1ad81dad5a175aeb8cc974aa6cca1c9f507bbd0bec3a0b11",
+                          "typeString": "literal_string \"MultiSignatureWallet: proposal was already executed\""
+                        },
+                        "value": "MultiSignatureWallet: proposal was already executed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_6a43ebb18702115f1ad81dad5a175aeb8cc974aa6cca1c9f507bbd0bec3a0b11",
+                          "typeString": "literal_string \"MultiSignatureWallet: proposal was already executed\""
+                        }
+                      ],
+                      "id": 3530,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1304:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3537,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1304:96:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3538,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1304:96:13"
+                },
+                {
+                  "id": 3539,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1410:1:13"
+                }
+              ]
+            },
+            "id": 3541,
+            "name": "proposalNotExecuted",
+            "nameLocation": "1256:19:13",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 3529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3528,
+                  "mutability": "mutable",
+                  "name": "_proposalId",
+                  "nameLocation": "1281:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3541,
+                  "src": "1276:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3527,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1276:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1275:18:13"
+            },
+            "src": "1247:171:13",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3543,
+        "src": "107:1313:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "82:1339:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-11-09T19:57:12.741Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
